@@ -1,21 +1,14 @@
 {
-  "age": 22,
-  "weight": 70.0,
-  "height": 170.0,
-  "gender": "Male",
-  "level": "Beginner",
-  "days": 3,
-  "goals": [
-    "General health",
-    "Build muscle"
-  ],
+  "age": 0,
+  "weight": 0,
+  "height": 0,
+  "gender": "",
+  "level": "",
+  "days": 0,
+  "goals": [],
   "target": "",
-  "equipment": [
-    "Full gym access"
-  ],
-  "diet": [
-    "No restrictions"
-  ],
-  "injuries": "Knee pain",
-  "bmi": 24.2
+  "equipment": [],
+  "diet": [],
+  "injuries": "",
+  "bmi": 0
 }
