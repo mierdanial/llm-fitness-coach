@@ -1,60 +1,35 @@
-# 🏋️ LLM Fitness Coach
+# LLM Fitness Coach
 
-**Final Year Project** — An AI-powered fitness coaching system that uses **Large Language Models (LLM)** and **Retrieval-Augmented Generation (RAG)** to generate personalized, evidence-based workout plans.
+This is my Final Year Project. It's an AI fitness coach that uses an LLM combined with RAG (Retrieval-Augmented Generation) to give workout plan recommendations based on actual sports science research instead of just the model guessing.
 
-## 📖 Overview
+## What it does
 
-This project combines the reasoning capabilities of an LLM with a curated knowledge base of sports science research (hypertrophy, periodization, recovery, injury prevention, nutrition, etc.) to provide fitness recommendations grounded in real studies — rather than relying purely on the model's general knowledge.
+Basically you chat with it about your fitness goals and it generates a personalized workout plan. Instead of just relying on what the LLM already knows, it pulls from a set of research papers and articles I collected (things like hypertrophy, progressive overload, recovery, injury prevention, nutrition for athletes etc) so the recommendations are backed by actual studies.
 
-## ✨ Features
+## Tech used
 
-- 🤖 LLM-powered conversational fitness coaching
-- 📚 RAG pipeline referencing peer-reviewed research and guidelines
-- 🧍 Personalized workout plans based on user profile and goals
-- 📊 Built on a knowledge base covering training splits, progressive overload, recovery, and injury-related research
+- Python
+- Streamlit for the web app
+- LLM API for the chat/generation part
+- RAG pipeline to search through the knowledge base before generating a response
 
-## 🛠️ Tech Stack
+## How to run it
+git clone https://github.com/mierdanial/fitness-llm-coach.git
+cd fitness-llm-coach
+pip install -r requirements.txt
+streamlit run AIFIT.py
 
-- **Python**
-- **Streamlit** — web app interface
-- **LLM API** (e.g. OpenAI / Anthropic)
-- **RAG** — vector search over a custom knowledge base (`fitcoach_data/`)
+You'll need an API key from [OpenRouter](https://openrouter.ai) — sign up there, get your key, and add it in `.streamlit/secrets.toml`:
+OPENROUTER_API_KEY = "your-key-here"
 
-## 🚀 Getting Started
+## Files
 
-1. Clone the repo:
-```bash
-   git clone https://github.com/mierdanial/fitness-llm-coach.git
-   cd fitness-llm-coach
-```
+- `AIFIT.py` - main app
+- `profile.json` - stores user profile info
+- `plan.txt` - saved workout plans
+- `fitcoach_data/` - the research articles and RAG index used for retrieval
+- `requirements.txt` - dependencies
 
-2. Install dependencies:
-```bash
-   pip install -r requirements.txt
-```
+## Notes
 
-3. Add your API key to `.streamlit/secrets.toml`:
-```toml
-   OPENAI_API_KEY = "your-key-here"
-```
-
-4. Run the app:
-```bash
-   streamlit run AIFIT.py
-```
-
-## 📁 Project Structure
-fitness-llm-coach/
-├── AIFIT.py              # Main Streamlit app
-├── profile.json          # User profile data
-├── plan.txt              # Generated workout plans
-├── requirements.txt      # Python dependencies
-└── fitcoach_data/        # RAG knowledge base (research articles, embeddings)
-
-## 📌 Status
-
-Actively in development as part of a Final Year Project.
-
-## 📄 License
-
-This project is for academic purposes as part of a Final Year Project.
+Still working on this, some parts might change as I keep testing/improving it. This is part of my FYP so it's still a work in progress.
